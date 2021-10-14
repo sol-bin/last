@@ -1,0 +1,340 @@
+@charset "utf-8";
+
+/*googleips 웹폰트 css 파일 불러오기*/
+@import url(https://fonts.googleapis.com/css?family=Galada|Nanum+Gothic|Nanum+Myeongjo);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+
+
+/*
+font-family: 'Noto Sans KR', sans-serif;
+*/
+/*font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Galada', cursive; */
+
+/* 저장된 글꼴 파일 선언*/
+/* @font-face { font-family : font_gothic;    
+                src : url(../font/NanumGothic.ttf); }  */
+/* 웹사이트의 글꼴 파일 선언*/
+/* @font-face { font-family : font_gothic;    
+                src : url(http://uhbee.com/nanum.eot) ; }   */
+
+
+* {margin:0; padding:0;scroll-behavior: smooth;}
+html{font-size:16px;}
+body{ font-size:16px;
+      color:#6f6f6f;
+      background-color:#FCEADE;
+      font-family: 'Nanum Gothic', sans-serif }
+ul, ol, li{list-style-type:none}
+img, fieldset{border:none;vertical-align: middle}
+hr {clear:both;border:none}
+a {color:inherit;text-decoration:none;
+   outline:0}
+table{border-collapse:collapse}
+input, textarea,
+input::placeholder, textarea::placeholder {
+      color:inherit;font-size:inherit;
+       font-family:inherit;
+       vertical-align: middle;
+      outline: 0;}
+button{outline:0}
+
+.sound_only{display: block;text-indent:-9999999999px;
+      height:0}
+
+
+
+ #wrap{width: 100%; min-width: 1024px; overflow: hidden;}
+.inner{min-width: 1024px; max-width: 1280px; margin: 0 auto;}
+      
+
+
+
+
+
+/*********************header****************************/
+
+#header{position:fixed;top:0;left: 0;width:100%;z-index: 1;}
+
+.logo{
+      display:block;
+      width:80px;
+}
+.logo img{
+      width: 100%;
+}
+
+
+.btn_all{
+      width:30px;
+      height: 30px;
+      position:absolute;
+      top: 30px;
+      right:30px;
+      z-index: 100;
+}
+.btn_all span{
+      position:absolute;
+      left:0;
+      height: 3px;
+      background-color:#aaa;
+      transition:all .2s ease-in-out;
+      -webkit-transition:all .2s ease-in-out;
+      width:100%;
+      border-radius:2px;
+}
+.btn_all span:nth-child(1){
+      top: 0px;
+}
+.btn_all span:nth-child(2){
+      top: 10px;
+      width:15px;
+}
+.btn_all span:nth-child(3){
+      top: 20px;
+}
+
+.btn_all.on span{
+      background-color: rgb(243, 129, 129);
+}
+.btn_all.on span:nth-child(1){
+      top:10px;
+      transform: rotate(45deg)
+  }
+.btn_all.on span:nth-child(2){
+      top:10px;
+      width:0
+}
+.btn_all.on span:nth-child(3){
+      top: 10px;
+      transform: rotate(-45deg)
+}
+
+.box{
+      position:fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width:100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 10;
+      display: none;
+}
+
+
+.box ul{
+      text-align: center;
+      color: #fff;
+      margin-top: 50px;
+      font-family:'STIX Two Text', serif ;
+      line-height: 3.5;
+      font-weight: bold;
+      font-size: 3.5rem;
+}
+
+
+/*
+
+#nav{
+      position:fixed;
+      left:0;
+      top:0;
+      width:100%;
+      background-color: rgba(255,255,255,0.3);
+}
+#nav h1{
+      float: left;
+      padding:5px 5px 5px 15px;
+}
+#nav h1 img{
+      width:80px;
+}
+#nav ul{
+      float:right;
+      padding-right: 10px;
+}
+#nav ul li{
+      display: inline;
+}
+#nav ul li a{
+      display: inline-block;
+      padding: 20px 15px;
+      color:#fff;
+      font-weight:bold;
+      text-transform: capitalize;
+      font-family:'STIX Two Text', serif;
+}
+#nav ul li.active a{
+      color: #000;
+}
+#nav .ham{
+      display:none;
+      position:absolute;
+      top: 7px;
+      right: 10px;
+      width:65px;
+      height: 45px;
+      cursor: pointer;
+}
+
+
+.ham span{
+      display:block;
+      background:#fff;
+      width:42px;
+      height: 4px;
+      border-radius: 3px;
+      transition:margin 1.25s 0.25s, transform 0.25s;
+}
+
+.ham .bar1{
+      margin-bottom:8px;
+}
+.ham .bar3{
+      margin-top:8px;
+}
+.ham .active span{
+      transition:margin 0.25s, transfirm 0.25s 0.25s;
+}
+.ham.active .bar1{
+      margin-top:8px;
+      margin-bottom:-4px;
+      transform:rotate(45deg);
+}
+.ham.active .bar2{
+      transform:rotate(45deg);
+}
+.ham.active .bar3{
+      margin-top: -4px;
+      transform:rotate(135deg);
+}
+
+
+@media(max-widht:800px){
+      #nav .menu{display:noen;}
+      #nav .ham{display:block;}
+
+      #nav h1{
+            width:100%;
+      }
+      #nav .menu{
+            float:none;
+            text-align:center;
+            padding-right:0;
+      }
+      #nav .meun li{
+            width:100%;
+            display:inline-block;
+      }
+      #nav .menu li.active{
+            background:rgba(255,255,255,0.3);
+      }
+
+
+      */
+
+
+/*
+
+nav{ float:right;padding-top: 10px;}
+button{
+      background:#DAD0C2;
+      color:#fff;
+      border:none;
+      position:relative;
+      height:30px;
+      /*
+      font-size:1.6em;
+      */
+      /*
+      padding:0 2em;
+      cursor:pointer;
+      transition:800ms ease all;
+      outline:none;
+    }
+    button:hover{
+      background:#fff;
+      color:#DAD0C2;
+    }
+    button:before,button:after{
+      content:'';
+      position:absolute;
+      top:0;
+      right:0;
+      height:2px;
+      width:0;
+      background: #DAD0C2;
+      transition:400ms ease all;
+    }
+    button:after{
+      right:inherit;
+      top:inherit;
+      left:0;
+      bottom:0;
+    }
+    button:hover:before,button:hover:after{
+      width:100%;
+      transition:800ms ease all;
+    }
+    
+*/
+
+.logo{
+      width:80px;
+      height: 80px;
+      text-align: center;
+}
+
+.logo img{
+      width: 80px;
+      height: 80px;
+}
+
+/*
+#header{
+      width:100%;
+      height: 50px;
+}
+#header h1{
+      display: block;
+      float: left;
+      width:50px;
+      height: 50px;
+}
+
+#header h1 img{
+      width: 50px;
+      height: 50px;
+}
+nav{ 
+      width:calc(100% - 100px);
+      float: right;
+      margin-top: 20px;
+      height: 50px;
+      padding: 0;
+      margin: 0;
+      background:#ff9100;
+}
+.nav-btn{
+      display: inline-block;
+      height: 50px;
+      width:20%;
+      margin: 0;
+      line-height: 50px;
+}
+
+nav a:link, nav a:visited{
+      font-size: 1em;
+      color: #fff;
+      text-decoration: none;
+      text-align:center;
+}
+
+*/
+
+
+
+
+/*********************footer****************************/
